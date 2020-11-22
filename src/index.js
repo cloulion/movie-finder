@@ -1,17 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import SearchMovies from "./searchMovies";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+class Main extends React.Component {
+  render() {
+    return (
+        <div className="container">
+            <div className="jumbotron bg-dark text-white">
+            <h1 className="display-2">Find your movie!</h1>
+            <p>React app made using <strong>create-react-app</strong> and <strong>The Movie Database API</strong></p>
+            </div>
+            <div className="container">
+                <SearchMovies/>
+            </div>
+        </div>
+    );
+  }
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+ReactDOM.render(<Main/>, document.getElementById('root'));
+
+
+
+
